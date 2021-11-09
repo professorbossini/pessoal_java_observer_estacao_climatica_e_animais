@@ -1,7 +1,7 @@
 import java.util.*;
 public class GeradorAleatorio implements Subject{
 
-    private List <Observer> observers;
+    private List <OldObserver> observers;
     private Random gerador;
     private int numeroAtual;
 
@@ -10,16 +10,16 @@ public class GeradorAleatorio implements Subject{
         this.gerador = new Random();
     }
 
-    public void registrarObserver (Observer o) {
+    public void registrarObserver (OldObserver o) {
         this.observers.add(o);
     }
 
-    public void removerObserver (Observer o){
+    public void removerObserver (OldObserver o){
         this.observers.remove(o);
     }
 
     public void notificarObservers(){
-        for (Observer o : observers){
+        for (OldObserver o : observers){
             o.atualizar(this.numeroAtual);
         }
     }
@@ -36,6 +36,18 @@ public class GeradorAleatorio implements Subject{
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public void registrarObserver(Observer o) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void removerObserver(Observer o) {
+        // TODO Auto-generated method stub
+        
     }
     
 }

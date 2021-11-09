@@ -1,3 +1,3 @@
 public interface Observer {
-    public void atualizar(int n);
+    public void atualizar(double t, double u, double p);
 }
